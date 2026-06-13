@@ -101,6 +101,7 @@ Ubuntu visita: http://itla.edu.do → Página web falsa de Kali
 | 10 | LAB | Kali, Ubuntu, Router (misma red) |
 
 ---
+```
 
 ## 📸 Capturas de pantalla requeridas
 
