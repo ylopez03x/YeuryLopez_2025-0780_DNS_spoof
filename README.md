@@ -6,7 +6,7 @@
 ---
 
 ## 📹 Video del Ataque
-> [Insertar enlace del video aquí]
+> [https://www.youtube.com/watch?v=H_yT_XI9EZE]
 
 ---
 
@@ -82,19 +82,8 @@ Ubuntu visita: http://itla.edu.do → Página web falsa de Kali
 
 ### Topología
 
-```
-┌─────────────┐    eth0/e0/0    ┌──────────────┐    e0/1/e0    ┌─────────────┐
-│ Kali Linux  │─────────────────│     SW1       │───────────────│   Ubuntu    │
-│  Atacante   │                 │   IOL L2      │               │   Víctima   │
-│172.20.25.100│                 │               │               │172.20.25.200│
-│DNS Falso    │                 └───────┬───────┘               └─────────────┘
-│Web Falso    │                         │ e0/2
-└─────────────┘                         │
-                                ┌───────▼───────┐
-                                │  Router 3725   │
-                                │ 172.20.25.1/24 │
-                                │  DNS Server    │
-                                └───────────────┘
+<img width="975" height="592" alt="image" src="https://github.com/user-attachments/assets/fb5c5cac-2219-44d9-adbf-1e7eb15f3b3a" />
+
 ```
 
 ### Direccionamiento IP
@@ -115,19 +104,21 @@ Ubuntu visita: http://itla.edu.do → Página web falsa de Kali
 
 ## 📸 Capturas de pantalla requeridas
 
-> **Instrucciones:** Toma estas capturas durante la demostración y agrégalas aquí.
+### nslookup itla.edu.do desde Ubuntu con DNS real (8.8.8.8)
+![nslookup dns real](https://github.com/user-attachments/assets/275ef7b8-24e7-4bf6-a471-8f56276a8870)
 
-1. `01_topologia_eve.png` — Topología completa en EVE-NG con nombre y matrícula visible
-2. `02_dns_real_antes.png` — `nslookup itla.edu.do` desde Ubuntu con DNS real (8.8.8.8)
-3. `03_apache_corriendo.png` — `systemctl status apache2` en Kali
-4. `04_pagina_falsa_kali.png` — `curl http://172.20.25.100` mostrando la página falsa
-5. `05_script_iniciando.png` — Script dns_spoof.py iniciando en Kali
-6. `06_dns_spoofed.png` — `nslookup itla.edu.do` desde Ubuntu mostrando IP falsa (172.20.25.100)
-7. `07_curl_pagina_falsa.png` — `curl http://itla.edu.do` desde Ubuntu mostrando página falsa
-8. `08_script_interceptando.png` — Script mostrando las consultas interceptadas
-9. `09_contramedida_router.png` — Configuración DNS legítimo en el Router
-10. `10_ubuntu_dns_router.png` — Ubuntu apuntando al router como DNS
-11. `11_ataque_fallido.png` — `nslookup itla.edu.do` resolviendo correctamente con contramedida
+### systemctl status apache2 en Kali
+![apache2 status](https://github.com/user-attachments/assets/f0c97258-6e8c-473e-bcf6-d06d1c6a4aff)
+
+### Script dns_spoof.py iniciando en Kali
+![dns spoof script](https://github.com/user-attachments/assets/6619ec4b-b50b-46d8-a04e-25cbfc1924b0)
+
+### nslookup itla.edu.do mostrando IP falsa y curl pagina falsa
+![dns spoofed y curl](https://github.com/user-attachments/assets/d14a2cae-d88f-4c98-87f6-a7863964f0f8)
+
+### Configuracion DNS legitimo en el Router
+![router dns contramedida](https://github.com/user-attachments/assets/0e3e8f65-756c-4f7c-972f-3c74d1eef396)
+
 
 ---
 
